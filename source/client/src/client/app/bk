@@ -1,0 +1,17 @@
+    helpers.getInfoAll2(actor1.movies).then(function(response){
+        console.log("getall response ",response);
+        response.data.forEach(function(movie){
+        console.log("getall ",movie);
+        var movieData = movie;
+        console.log("got movieData ",movieData , movieData.cast,movieData.crew);
+        if(movieData.cast) {
+        queue1.push(movieData.cast);
+        }
+        if(movieData.crew) {
+        queue1.push(movieData.crew);
+        }
+        console.log("queue data is ",queue);
+    });
+          actor1=queue1.shift();
+
+    }.bind(this));
